@@ -1,3 +1,4 @@
+import "./HotelList.scss";
 import { Hotelcard } from "./HotelCard";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -5,7 +6,7 @@ import axios from "axios";
 import styled from "styled-components";
 import StarRateIcon from "@material-ui/icons/StarRate";
 import logo from "../../logo.svg";
-import Ads from "../HotelDetails/Ads";
+// import Ads from "../HotelDetails/Ads";
 import {
   FormControlLabel,
   makeStyles,
@@ -18,18 +19,25 @@ import {
 import { useCallback } from "react";
 import { SearchByProperty } from "./Filters/SearchByProperty";
 import { PopularFilter } from "./Filters/PopularFilter";
+// import { SliderRange } from "./Filters/SliderRange";
 import { GuestRating } from "./Filters/GuestRating";
 import { PaymentType } from "./Filters/PaymentType";
 import { PropertyType } from "./Filters/PropertyType";
 import { PopularLocation } from "./Filters/PopularLocation";
 import { Mealplans } from "./Filters/MealPlans";
-import { useNavigate } from "react-router";
+// import { useHistory } from "react-router-dom";
 // import { useAxios } from "../../Hooks/useAxios";
+import { useNavigate } from "react-router-dom";
+import { HeaderInputs } from "../Carbook/HeaderInputs";
 
 const useStyle = makeStyles({
   button: {
     margin: "10px 10px 0 0",
     background: "white",
+    border:"0.1px solid grey",
+    padding : "6ppx 0px"
+    // width:"10px"
+    
   },
 
   selected: {
@@ -77,16 +85,31 @@ export const HotelList = () => {
   const [loading, setloading] = useState(false);
   const classes = useStyle();
   const [priceFilter, setPriceFilter] = useState("");
+  // const history = useHistory();
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     getData();
-    console.log(hotels);
   }, []);
 
-  const handleQueryChange = (val) => {
-    setSearchQuery(val);
+  const handleQueryChange = (value) => {
+
+    searchHotels(value)
+    setSearchQuery(value);
+  
+    function searchHotels(searchValue){
+      searchValue = searchValue.toLowerCase();
+      var SearchedData  = hotels.filter(function(hotel){
+          if(hotel.name.toLowerCase().includes(searchValue)){
+          return true;
+          }
+          return false;
+      })
+
+      if(SearchedData.length===0 || value ==="") getData();
+       else setHotels(SearchedData)
+      }
   };
 
   const handleChange = (event) => {
@@ -110,7 +133,8 @@ export const HotelList = () => {
   const getData = () => {
     setloading(true);
     axios
-      .get("https://my-api-data.herokuapp.com/data")
+      // .get("https://my-api-data.herokuapp.com/data")
+      .get("https://travelocity.onrender.com/hotel")
       .then((res) => {
         const { data } = res;
         setData(data);
@@ -139,23 +163,33 @@ export const HotelList = () => {
   );
 
   const handleOpenHotel = (id) => {
+    // history.push(`/hotels/${id}`);
     navigate(`/hotels/${id}`);
   };
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+
+    // import
 
   return (
     <>
-      <Wrapper>
+      <HeaderInputs/>
+      <Wrapper className="Wrapper">
         <div className="sorting">
+        <iframe 
+          style={{border:"1px solid grey", marginTop:"8px"}}
+          width="220"
+          height="150"
+           src={`https://maps.google.com/maps?q=Goa&t=&z=15&ie=UTF8&iwloc=&output=embed`}>
+          </iframe>
           <SearchByProperty
             handleQueryChange={handleQueryChange}
             query={searchQuery}
           />
 
-          {/* ---------------------------------------------------------------------------------------------------Star rating  */}
+          {/* ------------------------------------------Star rating---------------------------------------------------------  */}
           <div className="filter-title">Star rating</div>
           <Button
             onClick={() => {
@@ -213,7 +247,7 @@ export const HotelList = () => {
             5
           </Button>
 
-          {/* ------------------------------------------------------------------------------------------------------- Your Budget rating  */}
+          {/* --------------------------------------Your Budget rating----------------------------------------------- */}
           <div className="filter-title">Your Budget</div>
           <div className="popular-filter">
             <FormControl component="fieldset">
@@ -256,6 +290,7 @@ export const HotelList = () => {
             </FormControl>
           </div>
           <PopularFilter />
+          {/* <SliderRange /> Not working */}
           <GuestRating />
           <PaymentType />
           <PropertyType />
@@ -263,7 +298,7 @@ export const HotelList = () => {
           <Mealplans />
         </div>
 
-        {/*------------------------------------------------------------------------------------------>>>>>> Hotel List  */}
+        {/*-----------------------------------------Hotel List---------------------------------------- */}
 
         <div className="list">
           {loading ? (
@@ -271,22 +306,23 @@ export const HotelList = () => {
               <img src={logo} alt="" />
               <CircularProgress />
             </div>
-          ) : (
+          ) : hotels.length>=1 ? (
             hotels.map((item) => {
               return (
                 <Hotelcard
                   handleOpenHotel={handleOpenHotel}
                   key={item.hotelId}
                   data={item}
+                  
                 />
               );
             })
-          )}
+          ) : (<h1 style={{color : "red", textAlign:"center", marginTop:"300px"}}>No hotels exist !</h1>)
+        }
         </div>
-        <div>
+        {/* <div className="advSection">
           <Ads />
-          <Ads />
-        </div>
+        </div> */}
       </Wrapper>
     </>
   );

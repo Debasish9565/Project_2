@@ -1,8 +1,8 @@
 import styled from "styled-components";
+import "./HotelList.scss";
 
 const Wrapper = styled.div`
   width: 95%;
-  height: 170px;
   margin: 10px;
   margin-bottom: 20px;
   border-radius: 0.5rem;
@@ -15,8 +15,8 @@ const Wrapper = styled.div`
   }
 
   .card-image {
-    height: 100%;
-    width: 30%;
+    height: 200px;
+    width: 40%;
     border-radius: 0.5rem 0 0 0.5rem;
   }
 
@@ -54,7 +54,6 @@ const Wrapper = styled.div`
   .rating {
     font-size: 0.875rem;
     color: #505c66;
-
     color: #8f8f8f;
   }
 
@@ -90,34 +89,36 @@ const Wrapper = styled.div`
 `;
 
 export const Hotelcard = ({ data, handleOpenHotel }) => {
-  return (
-    <Wrapper
-      onClick={() => {
-        handleOpenHotel(data.hotelId);
-      }}
-    >
-      <img className="card-image" src={data.images[1].url} alt="" />
-      <div className="hotel-detail">
-        <div className="hotel-name-add">
-          <h3 className="hotel-name">{data.name}</h3>
-          <div className="hotel-city">{data.address.city}</div>
-        </div>
-        <div className="desc-rating">
-          <div className="description">Fully refundable</div>
-          <div className="description">Reserve Now Pay Later</div>
-          <div className="rating">
-            <span className="star">{data.starRating}/5.0</span> Excellent (356
-            reviews)
-          </div>
-        </div>
-      </div>
-      <div className="price-detail">
-        <div className="off">We have 5 left at 25% off</div>
-        <div className="price">${data.price}</div>
-        <div>Per night</div>
-        <div className="total-price">${data.price + 20} Total</div>
-        <div>Includes taxes and fees</div>
-      </div>
-    </Wrapper>
-  );
+    return (
+        <Wrapper
+            onClick={() => {
+                handleOpenHotel(data.hotelId);
+            }}
+            className="HotelCard"  
+        >
+            <img className="card-image" src={data.images[1].url} alt="" />
+
+            <div className="hotel-detail">
+                <div className="hotel-name-add">
+                    <h3 className="hotel-name">{data.name}</h3>
+                    <div className="hotel-city">{data.address.city}</div>
+                </div>
+                <div className="desc-rating">
+                    <div className="description">Fully refundable</div>
+                    <div className="description">Reserve Now Pay Later</div>
+                    <div className="rating">
+                        <span className="star">{data.starRating}/5.0</span> Excellent (356
+                        reviews)
+                    </div>
+                </div>
+            </div>
+            <div className="price-detail">
+                <div className="off">We have 5 left at 25% off</div>
+                <div className="price">${data.price}</div>
+                <div>Per night</div>
+                <div className="total-price">${data.price + 20} Total</div>
+                <div>Includes taxes and fees</div>
+            </div>
+        </Wrapper>
+    );
 };
