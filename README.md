@@ -3,10 +3,15 @@ TRAVELOCITY
 Team Name:5-Bits
 
 Team Members:
+
 Debasish Nandi-58(TL)
+
 Bimalendu Meher-53
+
 J K Aryan Rout-67
+
 Shyam Sundar Mohanty-90
+
 Sai Bhaskar Patra-81
 
 This is the clone of the Travelocity website. Travelocity is an online travel website where customers can make airline, hotel, and car rental reservations, book cruises and vacation packages, find information about destinations, and access a range of other travel-related services.
