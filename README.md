@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+TRAVELOCITY
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Team Name:5-Bits
 
-## Available Scripts
+Team Members:
+Debasish Nandi-58(TL)
+Bimalendu Meher-53
+J K Aryan Rout-67
+Shyam Sundar Mohanty-90
+Sai Bhaskar Patra-81
 
-In the project directory, you can run:
+This is the clone of the Travelocity website. Travelocity is an online travel website where customers can make airline, hotel, and car rental reservations, book cruises and vacation packages, find information about destinations, and access a range of other travel-related services.
+Here you can sign in into your account but if you don't have any account you can also create an account by giving your email address, name, passwords etc. Also there are various things to book such as hotels,flights,cars,packages etc. where you can give the place, date and other necessary things. Below there are some ads and offers which you can avail.  
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![WhatsApp Image 2023-07-28 at 10 32 12](https://github.com/Debasish9565/project_2/assets/138751636/b067271b-ffbe-43e6-ade1-264f426e09c1)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+![WhatsApp Image 2023-07-28 at 10 32 13](https://github.com/Debasish9565/project_2/assets/138751636/721d9ef4-ca54-4926-8b95-f9db01f0c874)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![WhatsApp Image 2023-07-28 at 10 32 11](https://github.com/Debasish9565/project_2/assets/138751636/9e0655fd-d0fd-4361-8c58-f55077c4eb0a)
